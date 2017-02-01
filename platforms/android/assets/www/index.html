@@ -5,8 +5,6 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-
-
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -15,7 +13,6 @@
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
 
@@ -53,10 +50,27 @@
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
 
-
     <script src="js/directives.js"></script>
 
     <script src="js/services.js"></script>
+
+    <script type="text/javascript">
+        function onVisaCheckoutReady (){
+        V.init({
+          apikey: "YRIBX37BHIIJNRNXE9A821LbBgZOZU9WtBv7Vtz2-rzLMx5vk",
+          paymentRequest:{
+           currencyCode: "USD",
+           total: "10.00"
+         }
+        });
+        V.on("payment.success", function(payment)
+        {alert(JSON.stringify(payment)); });
+        V.on("payment.cancel", function(payment)
+        {alert(JSON.stringify(payment)); });
+        V.on("payment.error", function(payment, error)
+        {alert(JSON.stringify(error)); });
+      }
+  </script>
 
 
     <!-- Only required for Tab projects w/ pages in multiple tabs
@@ -65,13 +79,18 @@
 
   </head>
   <body ng-app="app" animation="slide-left-right-ios7" class="platform-android platform-cordova platform-webview">
-  <div>
-  <div>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
-  </div>
-</div>
+    <div>
+      <div>
+        <ion-nav-bar class="bar-stable">
+          <ion-nav-back-button></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+      </div>
+    </div>
+
+    <script type="text/javascript"
+    src="https://sandbox-assets.secure.checkout.visa.com/
+    checkout-widget/resources/js/integration/v1/sdk.js">
+    </script>
   </body>
 </html>
