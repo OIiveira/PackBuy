@@ -1,7 +1,7 @@
 {
-  "name": "ionic-project",
-  "version": "1.1.1",
-  "description": "An Ionic project",
+  "name": "PackBuy",
+  "version": "1.0.0",
+  "description": "Project for Visa Hackathon on CPBR10.",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
