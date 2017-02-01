@@ -7,45 +7,17 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+    
+  
 
-
-
-      .state('menu.tapBus', {
-    url: '/home',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/tapBus.html',
-        controller: 'tapBusCtrl'
-      }
-    }
+      .state('page', {
+    url: '/page1',
+    templateUrl: 'templates/page.html',
+    controller: 'pageCtrl'
   })
 
-  .state('menu.map', {
-    url: '/map',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/map.html',
-        controller: 'mapCtrl'
-      }
-    }
-  })
+$urlRouterProvider.otherwise('/page1')
 
-  .state('menu.placesNearby', {
-    url: '/pn',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/placesNearby.html',
-        controller: 'placesNearbyCtrl'
-      }
-    }
-  })
-
-  .state('menu', {
-    url: '/side-menu21',
-    templateUrl: 'templates/menu.html',
-    abstract:true
-  });
-
-$urlRouterProvider.otherwise('/side-menu21/home');
+  
 
 });
